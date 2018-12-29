@@ -66,10 +66,20 @@ Crie uma função com as seguintes características:
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
 function media(range1, range2,qt) {
-  if ( !(range1 && range2) || !(range1 && qt) || !(range2 && qt)  return range1 || range2 || qt;
-  
+  if (range1 !== undefined && range2 === undefined && qt === undefined) {
+    return range1;
+  } else if (range1 !== undefined && range2 !== undefined %% qt === undefined) {
+    return range1 + range2; 
+  } else if (range1 !== undefined && range2 !== undefined  && qt !== undefined) {
+    return (range1 + range2) / qt;
+  } else {
+    return false;
+  }
 }
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
 ?
-```
+media(2);
+media(4, 2);
+media(8, 9, 2);
+media();
